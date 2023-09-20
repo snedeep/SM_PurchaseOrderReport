@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>Mproject</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{131d6d2b-853c-4217-b686-74a531161959}</ProjectGuid>
+    <Name>SM_PurchaseOrderReport</Name>
+    <RootNamespace>SM_PurchaseOrderReport</RootNamespace>
+    <StartupType>Class</StartupType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Menu Extensions\" />
+    <Folder Include="Output Menu Items\" />
+    <Folder Include="Reports\" />
+    <Folder Include="Simple Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxMenuExtension\AccountsReceivable.Mproject2">
+      <SubType>Content</SubType>
+      <Name>AccountsReceivable.Mproject2</Name>
+      <Link>Menu Extensions\AccountsReceivable.Mproject2</Link>
+    </Content>
+    <Content Include="AxMenuItemOutput\SM_PurchOrderOutputMenuItem">
+      <SubType>Content</SubType>
+      <Name>SM_PurchOrderOutputMenuItem</Name>
+      <Link>Output Menu Items\SM_PurchOrderOutputMenuItem</Link>
+    </Content>
+    <Content Include="AxQuery\SM_PurchReportQuery">
+      <SubType>Content</SubType>
+      <Name>SM_PurchReportQuery</Name>
+      <Link>Simple Queries\SM_PurchReportQuery</Link>
+    </Content>
+    <Content Include="AxReport\SM_PurchaseReport">
+      <SubType>Content</SubType>
+      <Name>SM_PurchaseReport</Name>
+      <Link>Reports\SM_PurchaseReport</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>
